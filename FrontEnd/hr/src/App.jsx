@@ -3,9 +3,12 @@ import './App.css'
 
 function App() {
     return (
-    <>
-     <Sidebar/>
-    </>
+    <main>
+      <Sidebar/>
+      <div className="main-content">
+        
+      </div>
+    </main>
   )
 }
 

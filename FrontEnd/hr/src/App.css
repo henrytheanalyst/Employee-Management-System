@@ -1,0 +1,10 @@
+main{
+    display: flex;
+    min-height: 100vh;
+
+}
+aside{
+    width: 250px;
+    background-color: red;
+    min-height: 100vh;
+}
