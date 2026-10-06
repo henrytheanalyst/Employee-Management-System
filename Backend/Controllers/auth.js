@@ -1,5 +1,6 @@
 import pool from "../db.js";
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 export const signup=async (req,res) => {
     try {
@@ -25,6 +26,47 @@ export const signup=async (req,res) => {
                 message:"Account exists"
             })
         }
+        res.status(500).json({
+            message:"Problem encountered in signup"
+        })
+
+    }
+}
+
+export const login=async (req,res) => {
+    try {
+        const {email,password}=req.body;
+        if(!email ||!password){
+            return res.status(400).json({
+                message:"All fields are required for login"
+            })
+        }
+        const result=await pool.query(`SELECT * FROM employers WHERE email=$1`,[email]);
+        if(result.rows.length === 0){
+            return res.status(400).json({
+                message:"Account does not exist"
+            })
+        }
+        const user=result.rows[0];
+        const passMatch=await bcrypt.compare(password,user.password);
+        if(!passMatch){
+            return res.status(400).json({
+                message:"Incorrect Password"
+            })
+        }
+        const token=jwt.sign(
+            {
+                id:user.id,
+                email:user.email
+            },
+            process.env.JWT_SECRET,
+            {expiresIn:"1h"}
+        )
+        res.status(200).json({
+            message:"Login Successful",
+            token:token
+        })
+    } catch (error) {
         res.status(500).json({
             message:"Problem encountered in signup"
         })
