@@ -5,6 +5,146 @@ main{
 }
 aside{
     width: 250px;
-    background-color: red;
+    background:#173F3A;
     min-height: 100vh;
+    padding: 20px 15px;
+    flex-shrink: 0;
+    
+}
+.logo-name{
+    display: flex;
+    align-items:center;
+    gap: 10px;
+    padding: 15px 10px 35px;
+    color: white;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logo{
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 50%;
+   
+}
+.container h2{
+    color:#8eb5ae;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    margin:10px 10px 12px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.symbol{
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+.cont{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    margin-bottom:5px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.cont:hover{
+    background: rgba(255, 255, 255, 0.12)
+    
+}
+.content{
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    background: #f7f8f5;
+}
+.topbar{
+    height: 72px;
+    background: white;
+    border-bottom: 1px solid #e8ebe7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+.search{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f5f6f2;
+    border-radius: 10px;
+}
+.search input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+.user-area{
+display: flex;
+align-items: center;
+gap: 15px;
+color: #777;
+font-size: 13px;
+}
+.avatar{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #173F3A;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+.dashboard{
+    padding: 35px 40px;
+}
+.welcome{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.welcome p{
+    color: #638b83;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+.welcome h1{
+    font-size: 32px;
+    font-weight: 500;
+    color: #173F3A;
+    margin-bottom: 8px;
+}
+.welcome span{
+    color: #7b817e;
+}
+.add-employee{
+    border: none;
+    background: #173F3A;
+    padding: 14px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 9px;
+    cursor: pointer;
 }
